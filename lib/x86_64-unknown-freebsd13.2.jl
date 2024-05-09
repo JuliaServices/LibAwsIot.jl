@@ -95,7 +95,7 @@ const aws_iotdevice_defender_get_number_list_fn = Cvoid
 """
 User callback type invoked to retrieve a string list custom metric
 
-List provided will already be initialized and caller must push items into the list of type (struct [`aws_string`](@ref) *). String allocated that are placed into the list are destroyed by the defender task after it is done with the list.
+List provided will already be initialized and caller must push items into the list of type (`struct aws_string *`). String allocated that are placed into the list are destroyed by the defender task after it is done with the list.
 
 returns: AWS\\_OP\\_SUCCESS if the custom metric was successfully added to the task config
 """
@@ -105,7 +105,7 @@ const aws_iotdevice_defender_get_string_list_fn = Cvoid
 """
 User callback type invoked to retrieve an ip list custom metric
 
-List provided will already be initialized and caller must push items into the list of type (struct [`aws_string`](@ref) *). String allocated that are placed into the list are destroyed by the defender task after it is done with the list.
+List provided will already be initialized and caller must push items into the list of type (`struct aws_string *`). String allocated that are placed into the list are destroyed by the defender task after it is done with the list.
 
 returns: AWS\\_OP\\_SUCCESS if the custom metric was successfully added to the task config
 """

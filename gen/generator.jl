@@ -42,6 +42,12 @@ function get_docs(node, docs)
         end
     end
 
+    # fix other random stuff
+    for doci in eachindex(docs)
+        # fix some code that gets bogus references inserted
+        docs[doci] = replace(docs[doci], "struct [`aws_string`](@ref) *" => "`struct aws_string *`")
+    end
+
     return docs
 end
 
