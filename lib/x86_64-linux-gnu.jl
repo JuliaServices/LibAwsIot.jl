@@ -1,31 +1,5 @@
 using CEnum
 
-"""
-    __JL_Ctag_205
-
-Documentation not found.
-"""
-struct __JL_Ctag_205
-    data::NTuple{8, UInt8}
-end
-
-function Base.getproperty(x::Ptr{__JL_Ctag_205}, f::Symbol)
-    f === :scheduled && return Ptr{Bool}(x + 0)
-    f === :reserved && return Ptr{Csize_t}(x + 0)
-    return getfield(x, f)
-end
-
-function Base.getproperty(x::__JL_Ctag_205, f::Symbol)
-    r = Ref{__JL_Ctag_205}(x)
-    ptr = Base.unsafe_convert(Ptr{__JL_Ctag_205}, r)
-    fptr = getproperty(ptr, f)
-    GC.@preserve r unsafe_load(fptr)
-end
-
-function Base.setproperty!(x::Ptr{__JL_Ctag_205}, f::Symbol, v)
-    unsafe_store!(getproperty(x, f), v)
-end
-
 # typedef int ( aws_iotdevice_defender_publish_fn ) ( struct aws_byte_cursor report , void * userdata )
 """
 Callback to invoke when the defender task needs to "publish" a report. Useful to override default MQTT publish behavior, for testing report outputs
@@ -468,6 +442,7 @@ Documentation not found.
     AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_DATA_NO_ACTIVE_CONNECTION = 13338
     AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_DATA_PROTOCOL_VERSION_MISMATCH = 13339
     AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_INACTIVE_SERVICE_ID = 13340
+    AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_ENCODE_FAILURE = 13341
     AWS_ERROR_END_IOTDEVICE_RANGE = 14335
 end
 
