@@ -1,28 +1,28 @@
 using CEnum
 
 """
-    __JL_Ctag_90
+    union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)
 
 Documentation not found.
 """
-struct __JL_Ctag_90
+struct var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"
     data::NTuple{8, UInt8}
 end
 
-function Base.getproperty(x::Ptr{__JL_Ctag_90}, f::Symbol)
+function Base.getproperty(x::Ptr{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}, f::Symbol)
     f === :scheduled && return Ptr{Bool}(x + 0)
     f === :reserved && return Ptr{Csize_t}(x + 0)
     return getfield(x, f)
 end
 
-function Base.getproperty(x::__JL_Ctag_90, f::Symbol)
-    r = Ref{__JL_Ctag_90}(x)
-    ptr = Base.unsafe_convert(Ptr{__JL_Ctag_90}, r)
+function Base.getproperty(x::var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)", f::Symbol)
+    r = Ref{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}(x)
+    ptr = Base.unsafe_convert(Ptr{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}, r)
     fptr = getproperty(ptr, f)
     GC.@preserve r unsafe_load(fptr)
 end
 
-function Base.setproperty!(x::Ptr{__JL_Ctag_90}, f::Symbol, v)
+function Base.setproperty!(x::Ptr{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}, f::Symbol, v)
     unsafe_store!(getproperty(x, f), v)
 end
 
@@ -468,6 +468,7 @@ Documentation not found.
     AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_DATA_NO_ACTIVE_CONNECTION = 13338
     AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_DATA_PROTOCOL_VERSION_MISMATCH = 13339
     AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_INACTIVE_SERVICE_ID = 13340
+    AWS_ERROR_IOTDEVICE_SECURE_TUNNELING_ENCODE_FAILURE = 13341
     AWS_ERROR_END_IOTDEVICE_RANGE = 14335
 end
 

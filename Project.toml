@@ -1,6 +1,6 @@
 name = "LibAwsIot"
 uuid = "d022c788-31c6-4e56-9a35-f63e7e4f3ca1"
-version = "1.0.0"
+version = "1.0.1"
 
 [deps]
 CEnum = "fa961155-64e5-5f13-b03f-caf6b980ea82"
@@ -23,7 +23,7 @@ LibAwsHTTP = "1"
 LibAwsIO = "1"
 LibAwsMqtt = "1"
 LibAwsSdkutils = "1"
-aws_c_iot_jll = "=0.1.21"
+aws_c_iot_jll = "=0.2.1"
 julia = "1.6"
 
 [extras]
