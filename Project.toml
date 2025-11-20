@@ -14,7 +14,7 @@ LibAwsSdkutils = "c5f27dc9-c37b-4573-9b6c-b90055172160"
 aws_c_iot_jll = "ac3cf774-1c31-5ab1-b91e-e77d3fbc835d"
 
 [compat]
-Aqua = "0.7"
+Aqua = "0.7,0.8"
 CEnum = "0.5"
 LibAwsCal = "1"
 LibAwsCommon = "1"
