@@ -1,29 +1,37 @@
-using CEnum
+using CEnum: CEnum, @cenum
 
 """
-    union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)
+    __JL_Ctag_20
 
 Documentation not found.
 """
-struct var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"
+struct __JL_Ctag_20
     data::NTuple{8, UInt8}
 end
 
-function Base.getproperty(x::Ptr{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}, f::Symbol)
+function Base.getproperty(x::Ptr{__JL_Ctag_20}, f::Symbol)
     f === :scheduled && return Ptr{Bool}(x + 0)
     f === :reserved && return Ptr{Csize_t}(x + 0)
     return getfield(x, f)
 end
 
-function Base.getproperty(x::var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)", f::Symbol)
-    r = Ref{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}(x)
-    ptr = Base.unsafe_convert(Ptr{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}, r)
+function Base.getproperty(x::__JL_Ctag_20, f::Symbol)
+    r = Ref{__JL_Ctag_20}(x)
+    ptr = Base.unsafe_convert(Ptr{__JL_Ctag_20}, r)
     fptr = getproperty(ptr, f)
     GC.@preserve r unsafe_load(fptr)
 end
 
-function Base.setproperty!(x::Ptr{var"union (unnamed at /home/runner/.julia/artifacts/1279320997439476831fdb6a9fa0cf3d50ab2449/include/aws/common/task_scheduler.h:40:5)"}, f::Symbol, v)
+function Base.setproperty!(x::Ptr{__JL_Ctag_20}, f::Symbol, v)
     unsafe_store!(getproperty(x, f), v)
+end
+
+function Base.propertynames(x::__JL_Ctag_20, private::Bool = false)
+    (:scheduled, :reserved, if private
+            fieldnames(typeof(x))
+        else
+            ()
+        end...)
 end
 
 # typedef int ( aws_iotdevice_defender_publish_fn ) ( struct aws_byte_cursor report , void * userdata )
@@ -62,7 +70,7 @@ User callback type invoked when a report fails to submit.
 There are two possibilities for failed submission: 1. The MQTT client fails to publish the message and returns an error code. In this scenario, the client\\_error\\_code will be a value other than AWS\\_ERROR\\_SUCCESS. The rejected\\_message\\_payload parameter will be NULL. 2. After a successful publish, a reply is received on the respective MQTT rejected topic with a message. In this scenario, the client\\_error\\_code will be AWS\\_ERROR\\_SUCCESS, and rejected\\_message\\_payload will contain the payload of the rejected message received.
 
 # Arguments
-* `rejected_message_payload`:\\[in\\] response payload recieved from rejection topic
+* `rejected_message_payload`:\\[in\\] response payload received from rejection topic
 * `userdata`:\\[in\\] callback userdata
 """
 const aws_iotdevice_defender_report_rejected_fn = Cvoid
@@ -617,7 +625,7 @@ const aws_secure_tunneling_on_connection_reset_fn = Cvoid
 
 # typedef void ( aws_secure_tunneling_on_session_reset_fn ) ( void * user_data )
 """
-Signature of callback to invoke on session reset recieved from the Secure Tunnel Service
+Signature of callback to invoke on session reset received from the Secure Tunnel Service
 """
 const aws_secure_tunneling_on_session_reset_fn = Cvoid
 
@@ -804,6 +812,14 @@ end
 
 function Base.setproperty!(x::Ptr{aws_secure_tunnel}, f::Symbol, v)
     unsafe_store!(getproperty(x, f), v)
+end
+
+function Base.propertynames(x::aws_secure_tunnel, private::Bool = false)
+    (:allocator, :ref_count, :vtable, :config, :connections, :tls_ctx, :tls_con_opt, :host_resolution_config, :service_task, :next_service_task_run_time, :in_service, :loop, :desired_state, :current_state, :handshake_request, :websocket, :received_data, :next_reconnect_time_ns, :reconnect_count, :queued_operations, :current_operation, :pending_write_completion, :next_ping_time, if private
+            fieldnames(typeof(x))
+        else
+            ()
+        end...)
 end
 
 """
